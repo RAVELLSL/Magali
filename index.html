@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Parabéns! 80 Anos de Magali.</title>
+<style>
+    /* Estilos para o botão do menu */
+    #menuButton {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        z-index: 1000; /* Certifica-se de que o botão esteja acima de outros elementos */
+        font-size: 50px;
+        padding: 10px 20px;
+        background-color: #5a5e5a;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    body {
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        background: linear-gradient(to right, #83a4d4, #b6fbff);
+        color: #333;
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    h1 {
+        margin-top: 1px;
+        font-size: 75px;
+    }
+    .container {
+        width: 100%;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    .photo {
+        width: 320px;
+        height: 180px;
+        margin: 10px auto;
+        background-color: #ddd;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #333;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    .name, .section-title, .section-content, .audiobook-list li {
+        font-size: 35px;
+    }
+    .name {
+        margin-top: 10px;
+        font-weight: bold;
+    }
+    .section {
+        margin-top: 20px;
+        text-align: center;
+    }
+    .section-title {
+        font-size: 50px;
+        margin-bottom: 10px;
+    }
+    .download-button {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 10px 20px;
+        background: linear-gradient(to right, #dcdcdc, #f0f0f0); /* Degradê cinza claro */
+        color: #003366;
+        border: none;
+        border-radius: 15px;
+        font-size: 25px;
+        cursor: pointer;
+        text-decoration: none;
+    }
+    .book-cover {
+        width: 200px;
+        height: 270px;
+        margin: 10px auto;
+        background-color: #ddd;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #333;
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    .audiobook-list {
+        list-style: none; /* Remove os marcadores da lista */
+        padding: 0;
+    }
+    .audiobook-list li {
+        margin-bottom: 10px;
+    }
+
+    /* Estilos para o modal */
+    .modal {
+        display: none;
+        position: fixed;
+        top: 100px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #f0f0f0;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+  /* Estilos para os links do menu no modal */
+.modal a {
+    display: block;
+    margin-bottom: 10px;
+    font-size: 50px; /* Aumenta o tamanho da fonte para 30px */
+    text-decoration: none;
+    color: #333;
+}
+
+    /* Estilos para a seção de ÁUDIO BOOK */
+    #audiobook {
+        margin-top: 50px; /* Espaço maior entre o botão de download e a seção de ÁUDIO BOOK */
+    }
+</style>
+</head>
+<body>
+
+<!-- Botão do menu -->
+<button id="menuButton" onclick="toggleMenu()">Menu</button>
+
+<!-- Modal -->
+<div id="menuModal" class="modal">
+    <a href="#biografia">Biografia</a>
+    <a href="#mensagem">Mensagem de Agradecimento</a>
+    <a href="#audiobook">Áudio Book</a>
+    <a href="#ebook">E-Book</a>
+    <a href="#videos">Vídeos</a>
+    <a href="#mensagens">Mensagens</a>
+</div>
+
+
+<div id="menuBar" style="font-size: 20px; padding: 15px; font-size: 24px; display:none; position:fixed; top:40px; left:0; background-color:#f0f0f0; width:100%;">
+    <a style="font-size: 40px; text-decoration: none;" href="#biografia">Biografia</a>
+    <a style="font-size: 40px; text-decoration: none;" href="#mensagem">Mensagem de Agradecimento</a>
+    <a style="font-size: 40px; text-decoration: none;" href="#audiobook">Áudio Book</a>
+    <a style="font-size: 40px; text-decoration: none;" href="#ebook">E-Book</a>
+    <a style="font-size: 40px; text-decoration: none;" href="#videos">Vídeos</a>
+    <a style="font-size: 40px; text-decoration: none;" href="#mensagens">Mensagens</a>
+</div>
+
+<!-- Conteúdo restante da página -->
+<div class="container">
+    <h1>Magali Fonseca</h1>
+    <div class="photo">FOTO 16:9</div>
+    <div class="name">Parabéns pelos seus 80 Anos!</div>
+</div>
+
+<div id="biografia" class="grid-container">
+    <div class="section-title">BIOGRAFIA</div>
+    <div class="section-content">
+        <p>Breve texto biográfico aqui.</p>
+    </div>
+</div>
+
+<div id="mensagem" class="grid-container">
+    <div class="section-title">AGRADECIMENTOS</div>
+    <div class="section-content">
+        <p>Texto da mensagem de agradecimento aqui.</p>
+    </div>
+</div>
+
+<div id="ebook" class="grid-container">
+    <div class="section-title">E-BOOK</div>
+    <div id="bookCover">
+        <img src="data:image/jpeg;base64,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" alt="Capa do Livro">
+    </div>
+    <p>Clique no botão abaixo para realizar o download da versão digital do meu livro de crônicas.</p>
+    <a class="download-button" href="link_do_ebook_aqui">Download</a>
+</div>
+
+<!-- Seção de ÁUDIO BOOK -->
+<div id="audiobook" class="grid-container">
+    <div class="section-title">ÁUDIO BOOK</div>
+    <p class="section-text" style="font-size: 35px;">Aqui você pode ter acesso às crônicas no formato de áudio.</p>
+    <ul class="audiobook-list" style="column-count: 2; -webkit-column-count: 2; -moz-column-count: 2;">
+        <li>Crônica 1</li>
+        <li>Crônica 2</li>
+        <li>Crônica 3</li>
+        <li>Crônica 4</li>
+        <li>Crônica 5</li>
+        <li>Crônica 6</li>
+        <li>Crônica 7</li>
+        <li>Crônica 8</li>
+        <li>Crônica 9</li>
+        <li>Crônica 10</li>
+        <li>Crônica 11</li>
+        <li>Crônica 12</li>
+    </ul>
+</div>
+
+<div id="videos" class="grid-container">
+    <div class="section-title">VÍDEOS</div>
+    <p class="section-text" style="font-size: 35px;">Aqui você pode assistir às crônicas narradas e ilustradas.</p>
+
+    <div class="video">
+        <h3>Title of Video 1</h3>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID_1" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <div class="video">
+        <h3>Title of Video 2</h3>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/VIDEO_ID_2" frameborder="0" allowfullscreen></iframe>
+    </div>
+
+    <!-- Mais vídeos podem ser adicionados aqui -->
+</div>
+
+<div id="mensagens" class="grid-container">
+    <div class="section-title">MENSAGENS</div>
+    <div class="form-container" style="text-align: center;">
+        <form action="#" method="post">
+            <label for="name">Nome:</label><br>
+            <input type="text" id="name" name="name"><br>
+            <label for="email">Endereço de E-mail:</label><br>
+            <input type="email" id="email" name="email"><br>
+            <label for="message">Mensagem:</label><br>
+            <textarea id="message" name="message">Digite aqui!</textarea><br>
+            <input type="submit" value="Enviar" class="download-button">
+        </form>
+    </div>
+</div>
+
+<footer style="text-align: center; margin-top: 50px;">
+    <p>2024</p>
+</footer>
+
+<script>
+     function toggleMenu() {
+        var modal = document.getElementById('menuModal');
+        if (modal.style.display === 'block') {
+            modal.style.display = 'none';
+        } else {
+            modal.style.display = 'block';
+        }
+    }
+</script>
+
+</body>
+</html>
