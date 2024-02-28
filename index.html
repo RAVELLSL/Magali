@@ -41,17 +41,12 @@
         box-sizing: border-box;
     }
     .photo {
-        width: 320px;
-        height: 180px;
-        margin: 10px auto;
-        background-color: #ddd;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #333;
-        border-radius: 10px;
-        overflow: hidden;
-    }
+            max-width: 200px;
+            height: auto;
+            border-radius: 5%;
+            margin: 0 auto;
+        }
+
     .name, .section-title, .section-content, .audiobook-list li {
         font-size: 35px;
     }
@@ -128,8 +123,7 @@
 
     .section-content {
     text-align: justify;
-    padding: 0 55px; /* Adiciona um espaçamento de 20 pixels à esquerda e à direita */
-    font-size: 15px; /* Altere o tamanho da fonte conforme necessário */
+    padding: 0 40px; /* Adiciona um espaçamento de 20 pixels à esquerda e à direita */
 }
 </style>
 </head>
@@ -159,11 +153,13 @@
 </div>
 
 <!-- Conteúdo restante da página -->
-<div class="container">
-    <h1>Magali Fonseca</h1>
-    <div class="photo">FOTO 16:9</div>
-    <div class="name">Parabéns pelos seus 80 Anos!</div>
+<h1>Magali Fonseca</h1>
+<img class="photo" src="https://media.licdn.com/dms/image/D4E03AQGiiYO7JOoJnw/profile-displayphoto-shrink_200_200/0/1709147388533?e=1714608000&v=beta&t=4p6-1u4pvgB1P57bJYZUssfyP_s8gMcoCZnOFqc9b2Y" alt="Foto de Magali Fonseca">
+<div class="name">Parabéns pelos seus 80 Anos!</div>
 </div>
+
+
+
 
 <div id="biografia" class="grid-container">
     <div class="section-title">BIOGRAFIA</div>
