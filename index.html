@@ -186,6 +186,20 @@
                 width: 90%;
                 max-width: none;
             }
+
+            .modal-content {
+                width: 90%;
+                max-width: 600px;
+                height: auto;
+            }
+
+            .modal-content.ebook {
+                height: auto;
+            }
+
+            .book-cover {
+                max-width: 100%;
+            }
         }
 
         .modal {
@@ -212,11 +226,22 @@
             max-width: 600px;
             border-radius: 10px;
             overflow: hidden;
+            position: relative;
+        }
+
+        .modal-content.ebook {
+            max-width: 800px;
+            height: 80%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .close {
             color: #aaa;
-            float: right;
+            position: absolute;
+            top: 10px;
+            right: 20px;
             font-size: 28px;
             font-weight: bold;
         }
@@ -231,7 +256,7 @@
         /* Ajuste da capa do livro */
         .book-cover {
             width: 100%;
-            max-width: 200px;
+            max-width: 400px;
             height: auto;
             display: block;
             margin: 0 auto;
@@ -239,7 +264,7 @@
 
         .modal-title {
             font-size: 24px;
-            margin-bottom: 10px;
+            margin-bottom: 20px;
             text-align: center;
             font-weight: bold;
         }
@@ -289,7 +314,7 @@
         </div>
 
         <div id="ebook-modal" class="modal hidden">
-            <div class="modal-content">
+            <div class="modal-content ebook">
                 <span class="close" onclick="closeModal('ebook-modal')">&times;</span>
                 <div class="modal-title">E-Book</div>
                 <div class="photo-frame">
