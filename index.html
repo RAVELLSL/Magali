@@ -34,10 +34,16 @@
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
         }
 
+        .photo-frame {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
         .photo-frame img {
             width: 25%;
-            display: block;
-            margin: 20px auto;
             border-radius: 30px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
@@ -149,7 +155,7 @@
 
         @media screen and (max-width: 768px) {
             .photo-frame img {
-                width: 50%;
+                width: 45%;
             }
 
             .section-content {
@@ -187,6 +193,10 @@
                 margin-bottom: 20px;
                 margin-right: 0;
             }
+
+            .book-cover {
+                width: 100%;
+            }
         }
 
         @media screen and (min-width: 769px) {
@@ -216,7 +226,8 @@
         </header>
 
         <div class="photo-frame">
-            <img src="https://www.funimada.com/assets/images/cards/big/80th-birthday-65.gif" alt="Feliz Aniversário!">
+            <img src="https://www.funimada.com/assets/images/cards/big/80th-birthday-65.gif" alt="80th Birthday GIF">
+            <img src="https://www.funimada.com/assets/images/cards/big/80th-birthday-42.gif" alt="Feliz Aniversário">
         </div>
 
         <h2>Parabéns pelos seus 80 Anos!</h2>
@@ -229,7 +240,7 @@
                         <img src="https://media.licdn.com/dms/image/D4E03AQFIDgPke-0SYQ/profile-displayphoto-shrink_800_800/0/1709168189875?e=1727308800&v=beta&t=lqpMfbeva_wjLk9QZspifc5cGdMk1p4oNGaARTxGqrM" alt="Magali Fonseca">
                     </div>
                     <div class="thank-you-message">
-                        <p>Obrigado pelas felicitações de aniversário!<br>Magali Fonseca</p>
+                        <p>Obrigado a todos pelas felicitações de aniversário!<br>Magali Fonseca</p>
                     </div>
                 </div>
             </div>
