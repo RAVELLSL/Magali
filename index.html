@@ -14,17 +14,23 @@
             font-family: 'Roboto', sans-serif;
             background: linear-gradient(to bottom, #e6e6fa, #d8bfd8);
             color: #333;
-            text-align: center;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
         .container {
-            max-width: 800px;
-            margin: 0 auto;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
             padding: 20px;
+            text-align: center;
         }
 
         header {
-            margin-bottom: 30px;
+            margin-bottom: 20px;
         }
 
         h1 {
@@ -32,28 +38,43 @@
             margin: 0;
             color: #333;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .photo-frame {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
-
-        .photo-frame img {
-            width: 25%;
-            border-radius: 30px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            font-weight: bold;
         }
 
         h2 {
             font-size: 24px;
             font-weight: bold;
-            margin-top: 20px;
-            font-family: 'Roboto', sans-serif;
+            margin-top: 10px;
             color: #464747;
+        }
+
+        .main-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
+        .main-image {
+            flex: 1;
+            text-align: center;
+        }
+
+        /* Destaque da imagem principal */
+        .main-image img {
+            width: auto;
+            max-width: 510px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .side-content {
+            flex: 1;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
         .section {
@@ -64,17 +85,13 @@
             padding: 20px;
             transition: transform 0.3s, box-shadow 0.3s;
             cursor: pointer;
+            width: 80%;
+            max-width: 300px;
         }
 
         .section:hover {
             transform: scale(1.02);
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-        }
-
-        .section-content {
-            display: none;
-            padding: 20px;
-            text-align: center;
         }
 
         .section-title {
@@ -92,8 +109,9 @@
             flex-wrap: wrap;
         }
 
+        /* Tamanho da foto e texto de agradecimento */
         .thank-you-photo img {
-            width: 150px;
+            width: 200px;
             border-radius: 10px;
             margin-right: 20px;
         }
@@ -101,6 +119,7 @@
         .thank-you-message {
             flex: 1;
             text-align: center;
+            font-size: 18px;
         }
 
         .contact-icons {
@@ -109,11 +128,12 @@
             margin-top: 20px;
         }
 
+        /* Tamanho dos ícones de contato */
         .contact-icons a {
             display: inline-block;
             margin: 0 10px;
             color: #555;
-            font-size: 24px;
+            font-size: 32px;
             transition: transform 0.3s ease, color 0.3s ease;
         }
 
@@ -124,13 +144,13 @@
 
         .btn-container {
             text-align: center;
+            margin-top: 20px;
         }
 
         .btn {
             background-image: linear-gradient(to right, #666, #000);
             color: white;
             padding: 10px 20px;
-            margin-top: 10px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
@@ -154,68 +174,78 @@
         }
 
         @media screen and (max-width: 768px) {
-            .photo-frame img {
-                width: 45%;
-            }
-
-            .section-content {
-                font-size: 18px;
-            }
-
-            .btn-container {
-                margin-top: 20px;
-            }
-
-            .section-content h3 {
-                text-align: center;
-            }
-
-            .audio-player {
-                margin: 0 auto;
-                text-align: center;
-            }
-
-            .section-content iframe {
-                max-width: 100%;
-                height: auto;
-            }
-
-            .video-container {
-                max-width: 100%;
-                margin-bottom: 15px;
-            }
-
-            .thank-you-container {
+            .main-content {
                 flex-direction: column;
             }
 
-            .thank-you-photo img {
+            .main-image {
                 margin-bottom: 20px;
-                margin-right: 0;
             }
 
-            .book-cover {
-                width: 100%;
-            }
-        }
-
-        @media screen and (min-width: 769px) {
-            .section-content {
-                font-size: 18px;
+            .section {
+                width: 90%;
+                max-width: none;
             }
         }
 
-        .audio-player {
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0,0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 600px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* Ajuste da capa do livro */
+        .book-cover {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+            display: block;
             margin: 0 auto;
-            text-align: center;
         }
 
-        .section-content h3 {
+        .modal-title {
+            font-size: 24px;
+            margin-bottom: 10px;
             text-align: center;
+            font-weight: bold;
         }
 
-        .btn-container {
-            margin-top: 20px;
+        .hidden {
+            display: none;
         }
     </style>
 </head>
@@ -224,18 +254,29 @@
         <header>
             <br><br>
             <h1>Magali Borges da Fonseca</h1>
+            <h2>Parabéns pelos seus 80 Anos!</h2>
         </header>
 
-        <div class="photo-frame">
-            <img src="https://www.funimada.com/assets/images/cards/big/80th-birthday-65.gif" alt="80th Birthday GIF">
-            <img src="https://www.funimada.com/assets/images/cards/big/80th-birthday-42.gif" alt="Feliz Aniversário">
+        <div class="main-content">
+            <div class="main-image">
+                <img src="https://t3.ftcdn.net/jpg/05/11/69/20/360_F_511692088_rxDGDjTgOSbc4BIGsiyXAkPNfYGT7rr6.jpg" alt="Magali Fonseca">
+            </div>
+            <div class="side-content">
+                <div class="section" onclick="openModal('thank-you-modal')">
+                    <h2 class="section-title">Agradecimentos</h2>
+                </div>
+                <div class="section" onclick="openModal('ebook-modal')">
+                    <h2 class="section-title">E-Book</h2>
+                </div>
+                <div class="section" onclick="openModal('contact-modal')">
+                    <h2 class="section-title">Contato</h2>
+                </div>
+            </div>
         </div>
 
-        <h2>Parabéns pelos seus 80 Anos!</h2>
-
-        <div class="section" onclick="toggleSection('thank-you-modal')">
-            <h2 class="section-title">Agradecimentos</h2>
-            <div id="thank-you-modal" class="section-content">
+        <div id="thank-you-modal" class="modal hidden">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('thank-you-modal')">&times;</span>
                 <div class="thank-you-container">
                     <div class="thank-you-photo">
                         <img src="https://media.licdn.com/dms/image/D4E03AQFIDgPke-0SYQ/profile-displayphoto-shrink_800_800/0/1709168189875?e=1727308800&v=beta&t=lqpMfbeva_wjLk9QZspifc5cGdMk1p4oNGaARTxGqrM" alt="Magali Fonseca">
@@ -245,38 +286,53 @@
                     </div>
                 </div>
             </div>
-        </div>        
+        </div>
 
-        <div class="section" onclick="toggleSection('ebook-modal')">
-            <h2 class="section-title">E-Book</h2>
-            <div id="ebook-modal" class="section-content">
+        <div id="ebook-modal" class="modal hidden">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('ebook-modal')">&times;</span>
+                <div class="modal-title">E-Book</div>
                 <div class="photo-frame">
+                    <!-- Ajuste do tamanho da capa do livro -->
                     <img src="https://media.licdn.com/dms/image/D4E22AQHZoiMKFLqItw/feedshare-shrink_800/0/1721176698384?e=1724284800&v=beta&t=3j9mxLd_pZ3r2rvAGS7yoSMPKCSPRu49K137aOkZHzo" alt="Capa do E-Book" class="book-cover">
                 </div>
-                
                 <div class="btn-container">
                     <a href="https://ravellsl.github.io/magali-ebook/#" target="_blank" class="btn">Versão Web</a>
                 </div>
             </div>
-        </div>    
+        </div>
 
-        <div class="section" onclick="toggleSection('contact-modal')">
-            <h2 class="section-title">Contato</h2>
-            <div id="contact-modal" class="section-content">
+        <div id="contact-modal" class="modal hidden">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('contact-modal')">&times;</span>
+                <div class="modal-title">Contato</div>
                 <div class="contact-icons">
-                    <a href="https://wa.me/" target="_blank"><i class="fab fa-whatsapp"></i></a>             
+                    <a href="https://wa.me/" target="_blank"><i class="fab fa-whatsapp"></i></a>
                     <a href="mailto:maggafonseca@gmail.com"><i class="fas fa-envelope"></i></a>
                 </div>
             </div>
         </div>
+
         <br><br><br><br>
     </div>
 
     <script>
-        function toggleSection(sectionId) {
-            var modal = document.getElementById(sectionId);
-            var isVisible = modal.style.display !== 'none' && modal.style.display !== '';
-            modal.style.display = isVisible ? 'none' : 'block';
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.remove('hidden');
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+        }
+
+        window.onclick = function(event) {
+            var modals = document.getElementsByClassName('modal');
+            for (var i = 0; i < modals.length; i++) {
+                var modal = modals[i];
+                if (event.target == modal) {
+                    modal.classList.add('hidden');
+                }
+            }
         }
     </script>
 </body>
