@@ -34,19 +34,61 @@
             margin-bottom: 20px;
         }
 
+        @keyframes colorChange {
+            0% {
+                color: #1e90ff;
+                text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+            }
+            25% {
+                color: #ff69b4;
+                text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+            }
+            50% {
+                color: #32cd32;
+                text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+            }
+            75% {
+                color: #ffa500;
+                text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+            }
+            100% {
+                color: #1e90ff;
+                text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+            }
+        }
+
+        @keyframes borderColorChange {
+            0% {
+                border-color: #1e90ff;
+            }
+            25% {
+                border-color: #ff69b4;
+            }
+            50% {
+                border-color: #32cd32;
+            }
+            75% {
+                border-color: #ffa500;
+            }
+            100% {
+                border-color: #1e90ff;
+            }
+        }
+
+        h1, h2 {
+            animation: colorChange 5s infinite;
+        }
+
         h1 {
-            font-size: 36px;
+            font-size: 48px;
             margin: 0;
-            color: #333;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
             font-weight: bold;
         }
 
         h2 {
-            font-size: 24px;
+            font-size: 32px;
             font-weight: bold;
             margin-top: 10px;
-            color: #464747;
         }
 
         .main-content {
@@ -55,11 +97,14 @@
             justify-content: center;
             flex-wrap: wrap;
             width: 100%;
+            max-width: 1200px;
+            gap: 20px; /* Espaçamento entre elementos */
         }
 
         .main-image {
             flex: 1;
             text-align: center;
+            margin-bottom: 20px;
         }
 
         /* Destaque da imagem principal */
@@ -67,7 +112,9 @@
             width: auto;
             max-width: 510px;
             border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border: 3px solid; /* Borda fina */
+            animation: borderColorChange 5s infinite;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra mais pronunciada */
         }
 
         .side-content {
@@ -82,7 +129,7 @@
             background-color: #fff;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin: 20px 0;
+            margin: 10px 0;
             padding: 20px;
             transition: transform 0.3s, box-shadow 0.3s;
             cursor: pointer;
@@ -293,7 +340,7 @@
 
         <div class="main-content">
             <div class="main-image">
-                <img src="https://media.licdn.com/dms/image/D4E22AQFAPTDJ2oXjKg/feedshare-shrink_2048_1536/0/1721841272047?e=1724889600&v=beta&t=NzvJk3qlKwxmbfSVt5qbRN7Krhd2hjzfMBSwOjjEB3c" alt="Magali Fonseca">
+                <img src="https://media.licdn.com/dms/image/D4D22AQGML5Stdpr6yA/feedshare-shrink_2048_1536/0/1721915380682?e=1724889600&v=beta&t=O8FI629fCIyLHA75LC5a_IZZBVuzDhiByMwyY1kzO8k" alt="Magali Fonseca">
             </div>
             <div class="side-content">
                 <div class="section" onclick="openModal('thank-you-modal')">
@@ -324,12 +371,12 @@
 
         <div id="ebook-modal" class="modal hidden">
             <div class="modal-content ebook">
-                <span class="close" onclick="closeModal('ebook-modal')">&times;</span>
-                <div class="modal-title">E-Book</div>
+                <span class="close" onclick="closeModal('ebook-modal')">&times;</span><br><br>
+                <div class="modal-title"></div><br>
                 <div class="photo-frame">
                     <!-- Ajuste do tamanho da capa do livro -->
-                    <img src="https://media.licdn.com/dms/image/D4E22AQHbEvVJ93uiAA/feedshare-shrink_800/0/1721844331171?e=1724889600&v=beta&t=tQGxtTY8EQuFCjJCb22Tt6vxgQKsl1PnXZ6ZPG04bNI" alt="Capa do E-Book" class="book-cover">
-                </div>
+                    <img src="https://media.licdn.com/dms/image/D4E22AQHbEvVJ93uiAA/feedshare-shrink_800/0/1721844331171?e=1724889600&v=beta&t=tQGxtTY8EQuFCjJCb22Tt6vxgQKsl1PnXZ6ZPG04bNI" alt="Capa do livro Memórias Vívidas - Magali Fonseca" class="book-cover">
+                </div><br>
                 <div class="btn-container">
                     <a href="https://ravellsl.github.io/magali-ebook/#" target="_blank" class="btn">Versão Web</a>
                     <a href="https://ravellsl.github.io/magali-ebook-mobile/" target="_blank" class="btn">Versão Mobile</a>
@@ -345,6 +392,13 @@
                     <a href="https://wa.me/" target="_blank"><i class="fab fa-whatsapp"></i></a>
                     <a href="mailto:maggafonseca@gmail.com"><i class="fas fa-envelope"></i></a>
                 </div>
+            </div>
+        </div>
+
+        <div id="birthday-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('birthday-modal')">&times;</span>
+                <img src="https://www.funimada.com/assets/images/cards/big/80th-birthday-65.gif" alt="80th Birthday">
             </div>
         </div>
 
@@ -368,6 +422,10 @@
                     modal.classList.add('hidden');
                 }
             }
+        }
+
+        window.onload = function() {
+            openModal('birthday-modal');
         }
     </script>
 </body>
