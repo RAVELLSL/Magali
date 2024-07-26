@@ -281,8 +281,7 @@
             width: 80%;
             max-width: 600px;
             border-radius: 10px;
-            overflow: hidden; /* Ajuste para permitir rolagem */
-            position: relative;
+            overflow-y: auto; /* Permitir rolagem vertical */
             max-height: 90%; /* Limite de altura para permitir rolagem */
         }
 
@@ -313,10 +312,11 @@
         /* Ajuste da capa do livro */
         .book-cover {
             width: 100%;
-            max-width: 295px;
+            max-width: 100%;
             height: auto;
             display: block;
             margin: 0 auto;
+            max-height: 50vh; /* Limitar a altura da capa do livro */
         }
 
         .modal-title {
