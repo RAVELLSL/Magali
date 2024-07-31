@@ -34,49 +34,8 @@
             margin-bottom: 20px;
         }
 
-        @keyframes colorChange {
-            0% {
-                color: #1e90ff;
-                text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
-            }
-            25% {
-                color: #ff69b4;
-                text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
-            }
-            50% {
-                color: #32cd32;
-                text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
-            }
-            75% {
-                color: #ffa500;
-                text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
-            }
-            100% {
-                color: #1e90ff;
-                text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
-            }
-        }
-
-        @keyframes borderColorChange {
-            0% {
-                border-color: #1e90ff;
-            }
-            25% {
-                border-color: #ff69b4;
-            }
-            50% {
-                border-color: #32cd32;
-            }
-            75% {
-                border-color: #ffa500;
-            }
-            100% {
-                border-color: #1e90ff;
-            }
-        }
-
         h1, h2 {
-            animation: colorChange 5s infinite;
+            color: #1e90ff; /* Cor azul */
         }
 
         h1 {
@@ -93,6 +52,7 @@
 
         .main-content {
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
             flex-wrap: wrap;
@@ -102,7 +62,6 @@
         }
 
         .main-image {
-            flex: 1;
             text-align: center;
             margin-bottom: 20px;
         }
@@ -113,42 +72,24 @@
             max-width: 100%;
             height: auto;
             border-radius: 10px;
-            border: 3px solid; /* Borda fina */
-            animation: borderColorChange 5s infinite;
+            border: 3px solid #1e90ff; /* Borda azul */
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra mais pronunciada */
         }
 
         .side-content {
-            flex: 1;
             text-align: center;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
-        .section {
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin: 10px 0;
-            padding: 20px;
-            transition: transform 0.3s, box-shadow 0.3s;
-            cursor: pointer;
-            width: 80%;
-            max-width: 300px;
-        }
-
-        .section:hover {
-            transform: scale(1.02);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-        }
-
-        .section-title {
+        .highlight {
             font-size: 24px;
-            margin: 0;
-            padding-bottom: 10px;
-            border-bottom: 1px solid #eee;
-            color: #333;
+            font-weight: bold;
+            color: #1e90ff; /* Cor azul */
+            cursor: pointer;
+            margin: 10px 0; /* Espaço entre os nomes */
+            transition: color 0.3s ease;
         }
 
         .thank-you-container {
@@ -225,6 +166,14 @@
         }
 
         @media screen and (max-width: 768px) {
+            header h1 {
+                font-size: 32px;
+            }
+
+            header h2 {
+                font-size: 24px;
+            }
+
             .main-content {
                 flex-direction: column;
             }
@@ -238,9 +187,15 @@
                 height: auto;
             }
 
-            .section {
-                width: 90%;
-                max-width: none;
+            .side-content {
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
+            }
+
+            .highlight {
+                font-size: 20px; /* Ajustar tamanho das letras */
+                margin: 10px 0; /* Espaçamento entre os nomes */
             }
 
             .modal-content {
@@ -256,6 +211,17 @@
             .book-cover {
                 max-width: 100%;
                 height: auto;
+            }
+        }
+
+        @media screen and (min-width: 769px) {
+            .main-content {
+                flex-direction: row;
+            }
+
+            .side-content {
+                margin-left: 20px; /* Espaçamento ao lado da foto */
+                align-items: flex-start;
             }
         }
 
@@ -346,15 +312,9 @@
                 <img src="https://media.licdn.com/dms/image/D4D22AQGML5Stdpr6yA/feedshare-shrink_2048_1536/0/1721915380682?e=1724889600&v=beta&t=O8FI629fCIyLHA75LC5a_IZZBVuzDhiByMwyY1kzO8k" alt="Magali Fonseca">
             </div>
             <div class="side-content">
-                <div class="section" onclick="openModal('thank-you-modal')">
-                    <h2 class="section-title">Agradecimentos</h2>
-                </div>
-                <div class="section" onclick="openModal('ebook-modal')">
-                    <h2 class="section-title">E-Book</h2>
-                </div>
-                <div class="section" onclick="openModal('contact-modal')">
-                    <h2 class="section-title">Contato</h2>
-                </div>
+                <div class="highlight" onclick="openModal('thank-you-modal')">Agradecimentos</div>
+                <div class="highlight" onclick="openModal('ebook-modal')">E-Book</div>
+                <div class="highlight" onclick="openModal('contact-modal')">Contato</div>
             </div>
         </div>
 
@@ -366,7 +326,7 @@
                         <img src="https://media.licdn.com/dms/image/D4E03AQFIDgPke-0SYQ/profile-displayphoto-shrink_800_800/0/1709168189875?e=1727308800&v=beta&t=lqpMfbeva_wjLk9QZspifc5cGdMk1p4oNGaARTxGqrM" alt="Magali Fonseca">
                     </div>
                     <div class="thank-you-message">
-                        <p>Obrigado a todos pelas felicitações de aniversário!<br>Magali Fonseca</p>
+                        <p>Obrigado a todos pelas felicitações de aniversário!<br><strong>Magali Fonseca</strong></p>
                     </div>
                 </div>
             </div>
@@ -398,13 +358,6 @@
             </div>
         </div>
 
-        <div id="birthday-modal" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeModal('birthday-modal')">&times;</span>
-                <img src="https://www.funimada.com/assets/images/cards/big/80th-birthday-65.gif" alt="80th Birthday">
-            </div>
-        </div>
-
         <br><br><br><br>
     </div>
 
@@ -425,10 +378,6 @@
                     modal.classList.add('hidden');
                 }
             }
-        }
-
-        window.onload = function() {
-            openModal('birthday-modal');
         }
     </script>
 </body>
