@@ -352,9 +352,16 @@
                 <span class="close" onclick="closeModal('contact-modal')">&times;</span>
                 <div class="modal-title">Contato</div>
                 <div class="contact-icons">
-                    <a href="https://wa.me/" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://wa.me/5581988886460" target="_blank"><i class="fab fa-whatsapp"></i></a>
                     <a href="mailto:maggafonseca@gmail.com"><i class="fas fa-envelope"></i></a>
                 </div>
+            </div>
+        </div>
+
+        <div id="welcome-modal" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeModal('welcome-modal')">&times;</span>
+                <img src="https://www.funimada.com/assets/images/cards/big/80th-birthday-67.gif" alt="Welcome Image">
             </div>
         </div>
 
@@ -378,6 +385,10 @@
                     modal.classList.add('hidden');
                 }
             }
+        }
+
+        window.onload = function() {
+            openModal('welcome-modal');
         }
     </script>
 </body>
