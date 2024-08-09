@@ -9,294 +9,306 @@
 
     <style>
         body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Roboto', sans-serif;
-            background: linear-gradient(to bottom, #e6e6fa, #d8bfd8);
-            color: #333;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to bottom, #e6e6fa, #d8bfd8);
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
 
-        .container {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-            text-align: center;
-        }
+.container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+}
 
-        header {
-            margin-bottom: 20px;
-        }
+header {
+    margin-bottom: 20px;
+}
 
-        h1, h2 {
-            color: #1e90ff; /* Cor azul */
-        }
+h1, h2 {
+    color: #1e90ff; /* Cor azul */
+}
 
-        h1 {
-            font-size: 48px;
-            margin: 0;
-            font-weight: bold;
-        }
+h1 {
+    font-size: 48px;
+    margin: 0;
+    font-weight: bold;
+}
 
-        h2 {
-            font-size: 32px;
-            font-weight: bold;
-            margin-top: 10px;
-        }
+h2 {
+    font-size: 32px;
+    font-weight: bold;
+    margin-top: 10px;
+}
 
-        .main-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
-            width: 100%;
-            max-width: 1200px;
-            gap: 20px; /* Espaçamento entre elementos */
-        }
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    max-width: 1200px;
+    gap: 20px; /* Espaçamento entre elementos */
+}
 
-        .main-image {
-            text-align: center;
-            margin-bottom: 20px;
-        }
+.main-image {
+    text-align: center;
+    margin-bottom: 20px;
+}
 
-        /* Destaque da imagem principal */
-        .main-image img {
-            width: auto;
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-            border: 3px solid #1e90ff; /* Borda azul */
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra mais pronunciada */
-        }
+/* Destaque da imagem principal */
+.main-image img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    border: 3px solid #1e90ff; /* Borda azul */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Sombra mais pronunciada */
+}
 
-        .side-content {
-            text-align: center;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+.side-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
-        .highlight {
-            font-size: 24px;
-            font-weight: bold;
-            color: #1e90ff; /* Cor azul */
-            cursor: pointer;
-            margin: 10px 0; /* Espaço entre os nomes */
-            transition: color 0.3s ease;
-        }
+.highlight {
+    font-size: 24px;
+    font-weight: bold;
+    color: #1e90ff; /* Cor azul */
+    cursor: pointer;
+    margin: 10px 0; /* Espaço entre os nomes */
+    transition: color 0.3s ease;
+}
 
-        .thank-you-container {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
-            flex-direction: column;
-        }
+.thank-you-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
 
-        /* Tamanho da foto e texto de agradecimento */
-        .thank-you-photo img {
-            width: 200px;
-            border-radius: 10px;
-            margin-bottom: 20px;
-        }
+/* Tamanho da foto e texto de agradecimento */
+.thank-you-photo img {
+    width: 200px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
 
-        .thank-you-message {
-            flex: 1;
-            text-align: center;
-            font-size: 18px;
-        }
+.thank-you-message {
+    flex: 1;
+    text-align: center;
+    font-size: 18px;
+}
 
-        .contact-icons {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-        }
+.contact-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
 
-        /* Tamanho dos ícones de contato */
-        .contact-icons a {
-            display: inline-block;
-            margin: 0 10px;
-            color: #555;
-            font-size: 32px;
-            transition: transform 0.3s ease, color 0.3s ease;
-        }
+/* Tamanho dos ícones de contato */
+.contact-icons a {
+    display: inline-block;
+    margin: 0 10px;
+    color: #555;
+    font-size: 32px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
 
-        .contact-icons a:hover {
-            transform: scale(1.2);
-            color: #333;
-        }
+.contact-icons a:hover {
+    transform: scale(1.2);
+    color: #333;
+}
 
-        .btn-container {
-            text-align: center;
-            margin-top: 20px;
-        }
+.btn-container {
+    text-align: center;
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Espaçamento entre os botões */
+}
 
-        .btn {
-            background-image: linear-gradient(to right, #666, #000);
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-            font-size: 16px;
-            transition: background-color 0.3s ease, transform 0.3s ease;
-            margin: 5px;
-        }
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: linear-gradient(to right, #666, #000);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    font-size: 16px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
 
-        .btn:hover {
-            background-color: #333;
-            transform: scale(1.05);
-        }
+.btn svg {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+}
 
-        .video-container {
-            text-align: center;
-        }
+.btn:hover {
+    background-color: #333;
+    transform: scale(1.05);
+}
 
-        .video-container h3 {
-            margin-bottom: 10px;
-            color: #333;
-        }
+.video-container {
+    text-align: center;
+}
 
-        @media screen and (max-width: 768px) {
-            header h1 {
-                font-size: 32px;
-            }
+.video-container h3 {
+    margin-bottom: 10px;
+    color: #333;
+}
 
-            header h2 {
-                font-size: 24px;
-            }
+@media screen and (max-width: 768px) {
+    header h1 {
+        font-size: 32px;
+    }
 
-            .main-content {
-                flex-direction: column;
-            }
+    header h2 {
+        font-size: 24px;
+    }
 
-            .main-image {
-                margin-bottom: 20px;
-            }
+    .main-content {
+        flex-direction: column;
+    }
 
-            .main-image img {
-                max-width: 100%;
-                height: auto;
-            }
+    .main-image {
+        margin-bottom: 20px;
+    }
 
-            .side-content {
-                flex-direction: column;
-                align-items: center;
-                width: 100%;
-            }
+    .main-image img {
+        max-width: 100%;
+        height: auto;
+    }
 
-            .highlight {
-                font-size: 20px; /* Ajustar tamanho das letras */
-                margin: 10px 0; /* Espaçamento entre os nomes */
-            }
+    .side-content {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
 
-            .modal-content {
-                width: 90%;
-                max-width: 600px;
-                height: auto;
-            }
+    .highlight {
+        font-size: 20px; /* Ajustar tamanho das letras */
+        margin: 10px 0; /* Espaçamento entre os nomes */
+    }
 
-            .modal-content.ebook {
-                height: auto;
-            }
+    .modal-content {
+        width: 90%;
+        max-width: 600px;
+        height: auto;
+    }
 
-            .book-cover {
-                max-width: 100%;
-                height: auto;
-            }
-        }
+    .modal-content.ebook {
+        height: auto;
+    }
 
-        @media screen and (min-width: 769px) {
-            .main-content {
-                flex-direction: row;
-            }
+    .book-cover {
+        max-width: 100%;
+        height: auto;
+    }
+}
 
-            .side-content {
-                margin-left: 20px; /* Espaçamento ao lado da foto */
-                align-items: flex-start;
-            }
-        }
+@media screen and (min-width: 769px) {
+    .main-content {
+        flex-direction: row;
+    }
 
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0,0,0,0.4);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
+    .side-content {
+        margin-left: 20px; /* Espaçamento ao lado da foto */
+        align-items: flex-start;
+    }
+}
 
-        .modal-content {
-            background-color: #fefefe;
-            margin: auto;
-            padding: 20px;
-            border: 1px solid #888;
-            width: 80%;
-            max-width: 600px;
-            border-radius: 10px;
-            overflow-y: auto; /* Permitir rolagem vertical */
-            max-height: 90%; /* Limite de altura para permitir rolagem */
-        }
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-        .modal-content img {
-            width: auto;
-            max-width: 100%;
-            height: auto;
-            max-height: 60vh;
-            border-radius: 10px;
-        }
+.modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 10px;
+    overflow-y: auto; /* Permitir rolagem vertical */
+    max-height: 90%; /* Limite de altura para permitir rolagem */
+}
 
-        .close {
-            color: #aaa;
-            position: absolute;
-            top: 10px;
-            right: 20px;
-            font-size: 28px;
-            font-weight: bold;
-            z-index: 2; /* Garantir que esteja acima da imagem */
-        }
+.modal-content img {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 60vh;
+    border-radius: 10px;
+}
 
-        .close:hover,
-        .close:focus {
-            color: black;
-            text-decoration: none;
-            cursor: pointer;
-        }
+.close {
+    color: #aaa;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    z-index: 2; /* Garantir que esteja acima da imagem */
+}
 
-        /* Ajuste da capa do livro */
-        .book-cover {
-            width: auto;
-            max-width: 100%;
-            height: auto;
-            max-height: 60vh; /* Limitar a altura da capa do livro */
-            display: block;
-            margin: 0 auto;
-        }
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
 
-        .modal-title {
-            font-size: 24px;
-            margin-bottom: 20px;
-            text-align: center;
-            font-weight: bold;
-        }
+/* Ajuste da capa do livro */
+.book-cover {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: 60vh; /* Limitar a altura da capa do livro */
+    display: block;
+    margin: 0 auto;
+}
 
-        .hidden {
-            display: none;
-        }
+.modal-title {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.hidden {
+    display: none;
+}
+
     </style>
 </head>
 <body>
@@ -341,8 +353,19 @@
                     <img src="https://media.licdn.com/dms/image/D4E22AQHbEvVJ93uiAA/feedshare-shrink_800/0/1721844331171?e=1724889600&v=beta&t=tQGxtTY8EQuFCjJCb22Tt6vxgQKsl1PnXZ6ZPG04bNI" alt="Capa do livro Memórias Vívidas - Magali Fonseca" class="book-cover">
                 </div>
                 <div class="btn-container">
-                    <a href="https://ravellsl.github.io/magali-ebook/#" target="_blank" class="btn">Versão Web</a>
-                    <a href="https://ravellsl.github.io/magali-ebook-mobile/" target="_blank" class="btn">Versão Mobile</a>
+                    <a href="https://ravellsl.github.io/magali-ebook/#" target="_blank" class="btn">
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="24px" height="24px">
+    <path d="M4 5h16v10H4z" fill="#ffffff" opacity="0.3"/>
+    <path d="M2 19h20c0.55 0 1-.45 1-1v-1H1v1c0 .55.45 1 1 1z" fill="#ffffff"/>
+    <path d="M22 17H2V5c0-1.1.9-2 2-2h16c1.1 0 2 .9 2 2v12zM4 5v10h16V5H4z" fill="#ffffff"/>
+</svg>
+                  Computador
+                    </a>
+                    <a href="https://ravellsl.github.io/magali-ebook-mobile/" target="_blank" class="btn">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="24px" height="24px"><path d="M0 0h24v24H0V0z" fill="none"/><path d="M7 4h10v15H7z" opacity=".3"/><path d="M17 1H7c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-2-2-2zm0 18H7V3h10v16z"/></svg>
+                        Smartphone
+                    </a>
                 </div>
             </div>
         </div>
